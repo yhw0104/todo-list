@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  color: var(--vscode-foreground);
+  background: var(--vscode-editor-background);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 16px;
+}
+
+.phone {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  background: var(--vscode-sideBar-background, var(--vscode-editor-background));
+  border-radius: 28px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  min-height: calc(100vh - 32px);
+}
+
+.phone__header {
+  padding: 24px 22px 16px;
+  background: linear-gradient(135deg, #6a8dff, #b06ab3);
+  color: #fff;
+}
+
+.phone__title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.phone__subtitle {
+  margin-top: 4px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.phone__body {
+  flex: 1;
+  padding: 16px 14px 12px;
+  overflow-y: auto;
+}
+
+.todos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--vscode-editorWidget-background, rgba(127, 127, 127, 0.08));
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: transform 0.12s ease;
+}
+
+.todo:hover {
+  transform: translateY(-1px);
+}
+
+.todo__check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--vscode-button-background, #6a8dff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.todo--done .todo__check {
+  background: var(--vscode-button-background, #6a8dff);
+}
+
+.todo__text {
+  flex: 1;
+  word-break: break-word;
+  cursor: text;
+}
+
+.todo--done .todo__text {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.todo__edit-input {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--vscode-input-border, transparent);
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  font: inherit;
+  outline: none;
+}
+
+.todo__actions {
+  display: flex;
+  gap: 4px;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  color: var(--vscode-foreground);
+  opacity: 0.55;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.icon-btn:hover {
+  opacity: 1;
+  background: rgba(127, 127, 127, 0.18);
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  opacity: 0.7;
+}
+
+.empty__icon {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+
+.empty__text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.empty__sub {
+  margin-top: 4px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.phone__footer {
+  padding: 12px 14px 18px;
+  border-top: 1px solid rgba(127, 127, 127, 0.18);
+  background: var(--vscode-sideBar-background, var(--vscode-editor-background));
+}
+
+.composer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.composer__input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--vscode-input-border, transparent);
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  font: inherit;
+  outline: none;
+}
+
+.composer__input:focus {
+  border-color: var(--vscode-focusBorder);
+}
+
+.composer__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+  background: linear-gradient(135deg, #6a8dff, #b06ab3);
+  box-shadow: 0 4px 10px rgba(106, 141, 255, 0.4);
+}
+
+.composer__btn:active {
+  transform: scale(0.95);
+}

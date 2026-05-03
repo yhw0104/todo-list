@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="{{csp}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{styleUri}}" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <div class="phone">
+      <header class="phone__header">
+        <div class="phone__title">My Todos</div>
+        <div class="phone__subtitle" id="counter">0개</div>
+      </header>
+
+      <main class="phone__body">
+        <div class="empty" id="empty" hidden>
+          <div class="empty__icon">📝</div>
+          <div class="empty__text">할 일이 없어요</div>
+          <div class="empty__sub">아래에서 새로 추가해 보세요</div>
+        </div>
+        <ul class="todos" id="todos"></ul>
+      </main>
+
+      <footer class="phone__footer">
+        <form class="composer" id="composer">
+          <input
+            class="composer__input"
+            id="input"
+            type="text"
+            autocomplete="off"
+            placeholder="새 할 일 입력 후 Enter"
+          />
+          <button class="composer__btn" id="addBtn" type="submit" aria-label="추가">+</button>
+        </form>
+      </footer>
+    </div>
+
+    <script nonce="{{nonce}}" src="{{scriptUri}}"></script>
+  </body>
+</html>
